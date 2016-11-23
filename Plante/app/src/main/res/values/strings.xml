@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Plante</string>
+    <string name="action_settings">Settings</string>
+    <string name="plant_name">Plant name</string>
+    <string name="water_frequency">Water frequency</string>
+    <string name="plant_cant_be_void">Please write a name!</string>
+    <string name="save">Save</string>
+
+</resources>
