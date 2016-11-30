@@ -19,6 +19,7 @@ public class PlantDbHelper extends SQLiteOpenHelper{
         public static final String TABLE_NAME = "Plant";
         public static final String PLANT_NAME = "name";
         public static final String WATERING_FREQUENCY = "water_fre";
+        public static final String WATERING_DATE = "water_date";
     }
 
     public PlantDbHelper(Context context) {
@@ -27,12 +28,16 @@ public class PlantDbHelper extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE "+ PlantTable.TABLE_NAME +"( _id INTEGER PRIMARY KEY," +PlantTable.PLANT_NAME + " VARCHAR(100),"+PlantTable.WATERING_FREQUENCY+" INTEGER);");
-
+        db.execSQL("CREATE TABLE "+ PlantTable.TABLE_NAME +"( _id INTEGER PRIMARY KEY AUTOINCREMENT," +PlantTable.PLANT_NAME + " VARCHAR(20),"+PlantTable.WATERING_FREQUENCY+" INTEGER,"+PlantTable.WATERING_DATE+" VARCHAR(30));");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
+    /*@Override
+    public void onOpen(SQLiteDatabase db){
+        db.execSQL("DROP TABLE Plant");
+        db.execSQL("CREATE TABLE "+ PlantTable.TABLE_NAME +"( _id INTEGER PRIMARY KEY AUTOINCREMENT," +PlantTable.PLANT_NAME + " VARCHAR(20),"+PlantTable.WATERING_FREQUENCY+" INTEGER,"+PlantTable.WATERING_DATE+" VARCHAR(30));");
+    }*/
 }
